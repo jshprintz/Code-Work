@@ -20,3 +20,7 @@ const pEl = document.querySelector('.cool');
 console.log(pEl);
 
 pEl.style.textAlign = "left";
+
+const linkEl = document.querySelector('a');
+linkEl.setAttribute('href', 'https://www.google.com');
+
