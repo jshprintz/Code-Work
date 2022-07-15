@@ -20,6 +20,26 @@ buttonEl.addEventListener('click', function(e){
 
 
 
+// Listen to a click on every li item inside the ul. When we click, we want
+// to add a strikethrough or a line through the text to indicate the task is finished.
 
-// Add a list item that contains the text of the input, and 
-// put it inside of the ul when we click on the button.
+const ulEL = document.querySelector('ul');
+ulEL.addEventListener('click', function(e){
+    console.dir(e.target)
+    console.log('ul button working');
+    // conditional insude to check to see if line is already through
+    // and remove it.
+
+    e.target.style.textDecoration = 'line-through';
+
+    // See if you can't permantly add and delete
+    // see if you can move the items to the right once they get deleted.
+    
+})
+
+
+
+
+
+
+
