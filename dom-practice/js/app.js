@@ -1,51 +1,80 @@
 console.log("JavaScript loaded!");
 
-// Select an element of the DOM
-const titleEl = document.getElementById('title');
+// Select the score, and look at it's properties in the console.
 
-console.log(titleEl);
-console.dir(titleEl);
+const scoreEl = document.querySelector('#score');
+console.dir(scoreEl);
 
-titleEl.innerText = 'Hello World';
-titleEl.style.color = 'green';
+// Write a function that's called updateScore,
+// It will represent one argument representing the score
+// and it will return a string that represents what should be in the scoreEl
+// everytime someone scores.
 
-const newEl = document.querySelector('h3');
+//Use that function to update the innerText of the scoreEl.
 
-console.log(newEl);
-console.dir(newEl);
+function updateScore(score){
+    return `Score: ${score}`;
+};
+scoreEl.innerText = updateScore(4);
 
-newEl.style.textAlign = 'center';
 
-const pEl = document.querySelector('.cool');
-console.log(pEl);
 
-pEl.style.textAlign = "left";
 
-const linkEl = document.querySelector('a');
-linkEl.setAttribute('href', 'https://www.google.com');
+
+
+
+
+
+
+
+// // Select an element of the DOM
+// const titleEl = document.getElementById('title');
+
+// console.log(titleEl);
+// console.dir(titleEl);
+
+// titleEl.innerText = 'Hello World';
+// titleEl.style.color = 'green';
+
+// const newEl = document.querySelector('h3');
+
+// console.log(newEl);
+// console.dir(newEl);
+
+// newEl.style.textAlign = 'center';
+
+// const pEl = document.querySelector('.cool');
+// console.log(pEl);
+
+// pEl.style.textAlign = "left";
+
+// const linkEl = document.querySelector('a');
+// linkEl.setAttribute('href', 'https://www.google.com');
 
 const commentEls = document.querySelectorAll('.comment');
 console.log(commentEls);
 
+// // const changeText = document.querySelector('h1');
+// // changeText.innerText = 'This is new text';
 
-// write a function that returns a random color value every time it is called.
-//Check out RGB values and Math.random
 
+// // write a function that returns a random color value every time it is called.
+// //Check out RGB values and Math.random
+// Create random number
 function randNum(){
-    return Math.floor(Math.random() * 255)
+    return Math.floor(Math.random() * 256)
 };
-
+// Create random color
 function randColor(){
-let rColor = randNum();
-let gColor = randNum();
-let bColor = randNum();
-let newColor = `rgb(${rColor}, ${gColor}, ${bColor})`
-return newColor;
+return `rgb(${randNum()}, ${randNum()}, ${randNum()})`;
 };
 
-console.log(randColor(), "New Color")
+// Loop through comments, changing colors
 
-for (let i = 0; i < commentEls.length; i++){
-    randColor();
-    commentEls[i].style.color = randColor();
-};
+commentEls.forEach((commentEl) => {
+    commentEl.style.color = randColor();
+});
+
+const bodyColor = document.querySelector('body');
+bodyColor.style.backgroundColor = randColor();
+
