@@ -1370,8 +1370,35 @@ for (let i=0; i<evanstonWeather.list.length; i++){
 //      description: used most frequently
 // }
 // Each day is an object. Push into array when done.
+// Function used to convert Kelvin to Farrenheit
+ function convertKelvin(k){
+    let f = ((k-273.15)*1.8)+32
+    return f;
+ };
 
 const myWeather = [];
+const tempWeather = [];
+let dailyDate = evanstonWeather.list[0].dt_txt.substring(0, 10);
+//Goes through the API and pulls the information I need.
+ evanstonWeather.list.forEach(function(element, i) {
+    // add the current (realtime) data to the current (realtime) object
+    const currentData = {
+        high: Math.round(convertKelvin(evanstonWeather.list[i].main.temp_max)),
+        low: Math.round(convertKelvin(evanstonWeather.list[i].main.temp_min)),
+        desc: evanstonWeather.list[i].weather[0].description,
+        date: evanstonWeather.list[i].dt_txt.substring(0, 10),
+    };
+    // Check to see if date is the same. 
+    // If it is, push into array and send array to best.
+    // If not, keep looping.
+    // Use Math.max() and Math.min() to quickly get the max and min
+    // without if statements
+    
+    console.log(currentData.high, currentData.low, currentData.desc, currentData.date);
+ });
+
+ 
+
 
 //Function used to convert date into friendly format.
 function friendlyDate(date){
@@ -1381,7 +1408,7 @@ function friendlyDate(date){
 };
 
 //Function to find the highest temperature in a day
-function findHighLow(){
+function best(){
     //parent array for all days
     //Snip the day from the date string add to child array
     //when date doesn't match, add child array to parent array
