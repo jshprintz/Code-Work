@@ -1,3 +1,18 @@
+body {
+    background-color: bisque;
+}
+
 h1 {
     text-align: center;
+    background-color: aquamarine;
+    border: solid 5px;
+    border-radius: 25px;
+}
+
+div {
+    border: solid 5px;
+    border-radius: 25px;
+    padding: 20px;
+    background-color: aliceblue;
+    margin-right: center auto;
 }
