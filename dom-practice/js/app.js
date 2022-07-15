@@ -31,17 +31,21 @@ console.log(commentEls);
 // write a function that returns a random color value every time it is called.
 //Check out RGB values and Math.random
 
-function randColor(){
+function randNum(){
     return Math.floor(Math.random() * 255)
-}
+};
 
-let rColor = randColor();
-let gColor = randColor();
-let bColor = randColor();
+function randColor(){
+let rColor = randNum();
+let gColor = randNum();
+let bColor = randNum();
+let newColor = `rgb(${rColor}, ${gColor}, ${bColor})`
+return newColor;
+};
 
-console.log(rColor, gColor, bColor);
+console.log(randColor(), "New Color")
 
-for (let i of commentEls){
-    console.log(i);
-    i.style.color = "rgb(rColor, gColor, bColor";
+for (let i = 0; i < commentEls.length; i++){
+    randColor();
+    commentEls[i].style.color = randColor();
 };

@@ -1272,3 +1272,121 @@ console.log(`The temperature forecast for ${forecastDate} is ${forecastTemp} `);
 // There is a pretty substantial amount of research and calculation 
 // required to do this, plus thinking outside the box.
 
+//Used to find the correct date in the API;
+function findDate(date){
+    for (let i=0; i<evanstonWeather.list.length; i++){
+        if (evanstonWeather.list[i].dt_txt == date){
+            return i;
+        }
+    };
+};
+
+// Used to convert meters/second to MPH
+function convertToMPH(metersSecond){
+    let mph = (metersSecond * 2.237);
+    return `${mph} mph`;
+};
+
+// Used to convert wind degrees into cardinal direction
+function convertDegrees(degrees){
+    if ((degrees <= 22.5) || (degrees > 337.5)){
+        return 'north';
+    } else if (degrees <= 67.5){
+        return 'northeast';
+    } else if (degrees <= 112.5){
+        return 'east';
+    } else if (degrees <= 157.5){
+        return 'southeast';
+    } else if (degrees <= 202.5){
+        return 'south';
+    } else if (degrees <= 247.5){
+        return 'southwest';
+    } else if (degrees <= 292.5){
+        return 'west';
+    } else {
+        return 'northwest';
+    }
+};
+
+let apiIndex = findDate("2018-03-17 15:00:00");
+let windSpeed = evanstonWeather.list[apiIndex].wind.speed;
+let windDirection = evanstonWeather.list[apiIndex].wind.deg;
+
+windSpeed = convertToMPH(windSpeed);
+windDirection = convertDegrees(windDirection);
+
+console.log(`The wind will be blowing ${windDirection} at ${windSpeed}.`)
+
+// 5. Write logic to print the humidity each day at noon. 
+// If it's over 75%, also print the word "gross" in parentheses like this:
+// 2014-06-19: 60%
+// 2014-06-20: 77% (gross)
+// etc
+
+for (let i=0; i<evanstonWeather.list.length; i++){
+    let date = evanstonWeather.list[i].dt_txt;
+    date = `${date.substring(0, 10)}:`;
+
+    let dispHumid = evanstonWeather.list[i].main.humidity;
+        if (dispHumid > 75){
+            console.log(date, dispHumid, '(gross)');
+    }   else{
+            console.log(date, dispHumid);
+    };
+};
+
+// 6. So, by now you've noticed that you're given the weather data for 3
+// hour time increments. 
+// For this question, write logic to figure out the high and low temp for
+// each day, as well as a description of the weather overall for the day.
+
+// You will create an object that stores all of it, as follows:
+// • the date in a human-friendly format (like "Tue, Jan 30, 1997"--research 
+// JavaScript date stuff on MDN to see how to convert)
+// • the high temp for that day (use the highest of the 8 values for a 
+// given day, don't forget to convert Kelvin to F -- again write logic to do this)
+// • low temp (again, use the lowest of the 8 values for a given day, 
+// converted)
+// • the weather description for that day -- this will be the weather 
+// description that occurs the 'most frequently.' if multiple descriptions 
+// occur an equal number of times in a day, you can use whichever you like.
+
+// After each object is built, push it into an array called myWeather.
+
+// This will take some thinking. Plan out the steps required for each step 
+// carefully before you start writing code. You can use pencil and paper
+// for this, or write on the desks/glass walls with dry erase marker. You
+// may end up writing temporary code that you later replace with different 
+// code--that is a very common practice for developers.
+
+// I'd suggest just getting it working for one piece of data for one day, 
+// then all the data for a day, before writing the final code to do all 
+// the days.
+
+// Object: {
+//      date: in friendly format
+//      high: convert to F, highest of the day
+//      low: convert to F, lowest of the day
+//      description: used most frequently
+// }
+// Each day is an object. Push into array when done.
+
+const myWeather = [];
+
+//Function used to convert date into friendly format.
+function friendlyDate(date){
+    //Need to research how to manipulate date formats
+    let niceDate = date;
+    return niceDate;
+};
+
+//Function to find the highest temperature in a day
+function findHighLow(){
+    //parent array for all days
+    //Snip the day from the date string add to child array
+    //when date doesn't match, add child array to parent array
+    //start new child array for new day
+
+    //create object in child array that holds high and low temp
+    return high, low;
+};

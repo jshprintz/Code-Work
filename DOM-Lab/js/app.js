@@ -31,7 +31,7 @@ topMenuEl.style.backgroundColor = 'var(--top-menu-bg)';
 // Add a class of flex-around to topMenuEl
 topMenuEl.setAttribute('class', 'flex-around');
 
-// iterate over the entire menuLinks array for each "link" object
+// Iterate over the entire menuLinks array for each "link" object
 for (let i = 0; i < menuLinks.length; i++) {
     //Create an <a> element.
     let newButton = document.createElement('a');
@@ -46,12 +46,3 @@ for (let i = 0; i < menuLinks.length; i++) {
     //Append the new element to the topMenuEl element
     topMenuEl.append(newButton);
 };
-
-
-
-
-
-
-
-
-
