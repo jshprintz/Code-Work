@@ -40,3 +40,20 @@ let age = 15;
 age >= 16 ? console.log(`Here are the keys`) : console.log(`Sorry, you're too young.`);
 
 // II. Loops
+// A.
+for (let i=0; i < 10; i++){
+    console.log(i);
+};
+ //B.
+ for (let i=10; i <= 400; i++){
+    console.log(i);
+ };
+ //C.
+ for (let i=11; i < 4000; i=i+3){
+    console.log(i);
+ };
+
+ // B.
+ for (let i=0; i < 100; i++){
+    (i % 2) === 0 ? console.log(i, "<-- is an evan number") : console.log(i);
+ }
