@@ -207,6 +207,27 @@ subMenuEl.addEventListener('click', function(e){
     console.log("It worked")
     return
   };
+
+  //6.1
+  //Next the event listener should...
+  //Set showingSubMenu to false
+  showingSubMenu = false;
+  //Set the CSS top property of subMenuEl to 0
+  subMenuEl.style.top = '0';
+
+  //6.2
+  //Remove the class name of active from each <a> element in topMenuLinks
+  // whether the active class exists or not.
+  for (const a of topMenuLinks){
+    a.classList.remove('active');
+    }
+
+  //6.3
+  // Update the contents of maineEl to the contents of the <a>
+  // element, within an <h1>, clicked within subMenuEl.
+
+ 
+
 });
 
 
