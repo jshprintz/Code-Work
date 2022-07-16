@@ -40,15 +40,69 @@
 #one{
     border: solid 2px;
     display: inline-block;
-    padding: 30px;
+    padding: 30px 60px;
+    margin: 0px 5%;
 }
 #two{
     border: solid 2px;
     display: inline-block;
+    padding: 30px 60px;
+    margin: 0px 10%;
 }
 #three{
     border: solid 2px;
     display: inline-block;
+    padding: 30px 60px;
+    margin: 0px 5%;
 }
 
+#four{
+    border: solid 2px;
+    display: inline-block;
+    padding: 30px 60px;
+    margin: 0px 5%;
+}
+#five{
+    border: solid 2px;
+    display: inline-block;
+    padding: 30px 60px;
+    margin: 0px 10%;
+}
+#six{
+    border: solid 2px;
+    display: inline-block;
+    padding: 30px 60px;
+    margin: 0px 5%;
+}
+#seven{
+    border: solid 2px;
+    display: inline-block;
+    padding: 30px 60px;
+    margin: 0px 5%;
+}
+#eight{
+    border: solid 2px;
+    display: inline-block;
+    padding: 30px 60px;
+    margin: 0px 10%;
+}
+#nine{
+    border: solid 2px;
+    display: inline-block;
+    padding: 30px 60px;
+    margin: 0px 5%;
+}
+
+#zero{
+    border: solid 2px;
+    display: inline-block;
+    padding: 30px 120px;
+    margin: 0px 10%;
+}
+#equal{
+    border: solid 2px;
+    display: inline-block;
+    padding: 30px 120px;
+    margin: 0px 5%;
+}
 
