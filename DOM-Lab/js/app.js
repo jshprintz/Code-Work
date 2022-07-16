@@ -168,11 +168,13 @@ topMenuEl.addEventListener('click', function(e){
       //
       function buildSubMenu(subLinksEl){
         //1
-        subLinksEl.innerText = '';
+        // https://developer.mozilla.org/en-US/docs/Web/API/Node/removeChild
+        while (subMenuEl.firstChild){
+          subMenuEl.removeChild(subMenuEl.firstChild);
+        };
+
         //2
         for (let i=0; i < subLinksEl.length; i++){
-          console.log(subLinksEl[i]);
-          console.log(subMenuEl);
             //Create an <a> element.
             let newButton = document.createElement('a');
             //On the new element, add an href attribute with its value to the href property
