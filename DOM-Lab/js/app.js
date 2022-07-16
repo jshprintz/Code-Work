@@ -92,7 +92,7 @@ let showingSubMenu = false;
 // <a> element
 
 // console.log the content of the <a> to verify the handler is working.
-let number;
+let number = 0;
 
 topMenuEl.addEventListener('click', function(e){
     e.preventDefault();
@@ -100,7 +100,9 @@ topMenuEl.addEventListener('click', function(e){
       // Loop through all indices looking for a match
       for (const i in topMenuLinks){
         if (e.target === topMenuLinks[i]){
-          console.log(e.target.innerText);
+
+          let eTargetLC = e.target.innerText.toLowerCase();
+          console.log(eTargetLC);
           number = i;
 
               // 5.3
@@ -124,7 +126,9 @@ topMenuEl.addEventListener('click', function(e){
         }
           
       // 5.5) add a class of active
-      topMenuLinks[number].classList.add('active');
+      if (number >=0 ){
+        topMenuLinks[number].classList.add('active')
+      };
       
       // 5.6
       // Set showingSubMenu to true if the clicked <a> element's link
@@ -152,6 +156,10 @@ topMenuEl.addEventListener('click', function(e){
           subMenuEl.style.top = '100%';
       } else {
           subMenuEl.style.top = '0';
+
+        //6.4
+        // If the About link is clicked, an <h1>about</h1> should be displayed
+          mainEl.innerHTML = `<h1>about</h1>`
       };
 
       // 5.8
@@ -201,33 +209,36 @@ topMenuEl.addEventListener('click', function(e){
 
 subMenuEl.addEventListener('click', function(e){
   e.preventDefault();
-  console.log(e.target.innerText);
 
-  if (e.target.tagName.toLowerCase() !== 'a'){
-    console.log("It worked")
-    return
-  };
+  if (e.target.tagName.toLowerCase() === 'a'){
+    let eTargetLC = e.target.innerText.toLowerCase();
+    console.log(eTargetLC);
+      //6.1
+      //Next the event listener should...
+      //Set showingSubMenu to false
+      showingSubMenu = false;
+      //Set the CSS top property of subMenuEl to 0
+      subMenuEl.style.top = '0';
 
-  //6.1
-  //Next the event listener should...
-  //Set showingSubMenu to false
-  showingSubMenu = false;
-  //Set the CSS top property of subMenuEl to 0
-  subMenuEl.style.top = '0';
+      //6.2
+      //Remove the class name of active from each <a> element in topMenuLinks
+      // whether the active class exists or not.
+      for (const a of topMenuLinks){
+        a.classList.remove('active');
+        }
 
-  //6.2
-  //Remove the class name of active from each <a> element in topMenuLinks
-  // whether the active class exists or not.
-  for (const a of topMenuLinks){
-    a.classList.remove('active');
-    }
-
-  //6.3
-  // Update the contents of maineEl to the contents of the <a>
-  // element, within an <h1>, clicked within subMenuEl.
-
- 
-
+      //6.3
+      // Update the contents of mainEl to the contents of the <a>
+      // element, within an <h1>, clicked within subMenuEl.
+        mainEl.innerHTML = `<h1>${eTargetLC}</h1>`;
+      } else {
+        //When no link is selected, revert the menu back up.
+        showingSubMenu = false;
+        subMenuEl.style.top = '0';
+        for (const a of topMenuLinks){
+          a.classList.remove('active');
+          }
+      }
 });
 
 
