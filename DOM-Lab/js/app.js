@@ -92,10 +92,10 @@ let showingSubMenu = false;
 // <a> element
 
 // console.log the content of the <a> to verify the handler is working.
+let number;
 
 topMenuEl.addEventListener('click', function(e){
     e.preventDefault();
-let number;
     
       // Loop through all indices looking for a match
       for (const i in topMenuLinks){
@@ -103,24 +103,53 @@ let number;
           console.log(e.target.innerText);
           number = i;
 
-          if (topMenuLinks[i].hasClass = '.active'){
+              // 5.3
+              // In the event listener, if the clicked <a> link has a class of active:
+              // 1) Remove the active class from the clicked <a> element
+              // 2) Set the showingSubMenu to false
+              // 3) Set the CSS top property of subMenuEl to 0
+              // 4) return to exit handler
+          for (const a of document.querySelectorAll('a.active')){
+            a.classList.remove('active');
             showingSubMenu = false;
             subMenuEl.style.top = 0;
+            }
+        
+        } 
+      }
+      // 5.4) Remove class name of active from each element in topMenuLinks  
+      for (const a of topMenuLinks){
+        a.classList.remove('active');
+        showingSubMenu = false;
+        subMenuEl.style.top = 0;
+        }
+          
+      // 5.5) add a class of active
+      topMenuLinks[number].classList.add('active');
       
-            // 5.4) Remove class name of active from each element in topMenuLinks  
-              for (const i in topMenuLinks){
-                topMenuLinks[i].classList.remove('.active');
-                console.log("Remove");
-              };
-                  // 5.5) add a class of active
-            topMenuLinks[i].classList.add('.active');
-            return
-          }
-        return
-      } 
-  }
+      // 5.6
+      // Set showingSubMenu to true if the clicked <a> element's link
+      // object within menuLinks has a subLinks property.
+      // All do except for the link object for ABOUT
+      // Otherwise, set it to false.
+      // Hint: Saving the link object in a variable will come in handy
+      // for passing its subLinks array in the next task.
+
+      if (number === 0){
+        showingSubMenu = false;
+      } else {
+        showingSubMenu = true;
+      }
+
+    
 });
 
+
+
+
+
+
+// 5.3
 // In the event listener, if the clicked <a> link has a class of active:
 // 1) Remove the active class from the clicked <a> element
 // 2) Set the showingSubMenu to false
