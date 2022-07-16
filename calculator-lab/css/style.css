@@ -1,3 +1,54 @@
-h1 {
-    text-align: center;
+#output {
+    border: solid 4px;
+    text-align: right;
+    padding-right: 20px;
+    margin-bottom: 10px;
 }
+#input {
+    border: solid 4px;
+    text-align: right;
+    padding-right: 20px;
+    margin-bottom: 10px;
+}
+
+#row1 {
+    text-align: right;
+    position: fixed;
+    margin-left: 90%;
+}
+
+#plus {
+    border: solid 2px;
+    padding: 0px 20px;
+    margin-bottom: 10px;
+}
+#minus {
+    border: solid 2px;
+    padding: 0px 20px;
+    margin-bottom: 10px;
+}
+#multiply {
+    border: solid 2px;
+    padding: 0px 20px;
+    margin-bottom: 10px;
+}
+#divide {
+    border: solid 2px;
+    padding: 0px 20px;
+}
+
+#one{
+    border: solid 2px;
+    display: inline-block;
+    padding: 30px;
+}
+#two{
+    border: solid 2px;
+    display: inline-block;
+}
+#three{
+    border: solid 2px;
+    display: inline-block;
+}
+
+
