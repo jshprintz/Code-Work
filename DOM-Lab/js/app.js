@@ -1,10 +1,22 @@
 // Menu data structure
 const menuLinks = [
-    {text: 'about', href: '/about'},
-    {text: 'catalog', href: '/catalog'},
-    {text: 'orders', href: '/orders'},
-    {text: 'account', href: '/account'},
-  ];
+  {text: 'about', href: '/about'},
+  {text: 'catalog', href: '#', subLinks: [
+    {text: 'all', href: '/catalog/all'},
+    {text: 'top selling', href: '/catalog/top'},
+    {text: 'search', href: '/catalog/search'},
+  ]},
+  {text: 'orders', href: '#' , subLinks: [
+    {text: 'new', href: '/orders/new'},
+    {text: 'pending', href: '/orders/pending'},
+    {text: 'history', href: '/orders/history'},
+  ]},
+  {text: 'account', href: '#', subLinks: [
+    {text: 'profile', href: '/account/profile'},
+    {text: 'sign out', href: '/account/signout'},
+  ]},
+];
+
 
 // Select and cache the <main> element in a variable
 const mainEl = document.querySelector('main');
@@ -46,3 +58,71 @@ for (let i = 0; i < menuLinks.length; i++) {
     //Append the new element to the topMenuEl element
     topMenuEl.append(newButton);
 };
+
+
+// Select and cache the <nav id="sub-menu"> element in a variable named subMenuEl
+const subMenuEl = document.querySelector('#sub-menu');
+
+// Set the heigh subMenuEl element to be 100%
+subMenuEl.style.height = '100%';
+
+//Set the background color of subMenuEl to the value stored in the --sub-menu-bg CSS custom property
+subMenuEl.style.backgroundColor = 'var(--sub-menu-bg)';
+
+// ADd the class of flex-around to the subMenuEl element
+subMenuEl.setAttribute('class', 'flex-around');
+
+// Set the CSS position property of subMenuEl to the value of absolute
+subMenuEl.style.position = 'absolute';
+
+// Set the CSS top property of subMenuEl to the value of 0
+subMenuEl.style.top = 0;
+
+// Select and cache all of the <a> elements inside of topMenuEl in a variable named topMenuLinks
+// Declare a global showingSubMenu variable and initialize it to false
+
+const topMenuLinks = document.querySelectorAll('a');
+let showingSubMenu = false;
+
+//Attach a delevated 'click' event listener to topMenuEl.
+// The first line of code of the event listenern function should call the event object's preventDefault()
+// method. 
+
+// The second line of code function should immediately return if the element clicked was not an 
+// <a> element
+
+// console.log the content of the <a> to verify the handler is working.
+
+topMenuEl.addEventListener('click', function(e){
+    e.preventDefault();
+let number;
+    
+      // Loop through all indices looking for a match
+      for (const i in topMenuLinks){
+        if (e.target === topMenuLinks[i]){
+          console.log(e.target.innerText);
+          number = i;
+
+          if (topMenuLinks[i].hasClass = '.active'){
+            showingSubMenu = false;
+            subMenuEl.style.top = 0;
+      
+            // 5.4) Remove class name of active from each element in topMenuLinks  
+              for (const i in topMenuLinks){
+                topMenuLinks[i].classList.remove('.active');
+                console.log("Remove");
+              };
+                  // 5.5) add a class of active
+            topMenuLinks[i].classList.add('.active');
+            return
+          }
+        return
+      } 
+  }
+});
+
+// In the event listener, if the clicked <a> link has a class of active:
+// 1) Remove the active class from the clicked <a> element
+// 2) Set the showingSubMenu to false
+// 3) Set the CSS top property of subMenuEl to 0
+// 4) return to exit handler
