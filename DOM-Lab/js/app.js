@@ -76,7 +76,7 @@ subMenuEl.setAttribute('class', 'flex-around');
 subMenuEl.style.position = 'absolute';
 
 // Set the CSS top property of subMenuEl to the value of 0
-subMenuEl.style.top = 0;
+subMenuEl.style.top = '0';
 
 // Select and cache all of the <a> elements inside of topMenuEl in a variable named topMenuLinks
 // Declare a global showingSubMenu variable and initialize it to false
@@ -112,7 +112,7 @@ topMenuEl.addEventListener('click', function(e){
           if (e.target.classList.contains('active')){
             e.target.classList.remove('active');
             showingSubMenu = false;
-            subMenuEl.style.top = 0;
+            subMenuEl.style.top = '0';
             return
             }
         
@@ -121,8 +121,6 @@ topMenuEl.addEventListener('click', function(e){
       // 5.4) Remove class name of active from each element in topMenuLinks  
       for (const a of topMenuLinks){
         a.classList.remove('active');
-        showingSubMenu = false;
-        subMenuEl.style.top = 0;
         }
           
       // 5.5) add a class of active
@@ -135,12 +133,62 @@ topMenuEl.addEventListener('click', function(e){
       // Otherwise, set it to false.
       // Hint: Saving the link object in a variable will come in handy
       // for passing its subLinks array in the next task.
-
-      if (menuLinks[number] === 0){
+      if (number == 0){
         showingSubMenu = false;
       } else {
         showingSubMenu = true;
       }
+      const objSubLinks = menuLinks[number].subLinks;
+      // 5.7
+      // If showingSubMenu is true:
+          // 1) Call a buildSubMenu function passing to it the sublinks
+          // array for the clicked <a> element.
+          // 2) Set the CSS top property of subMenuEl to 100%;
+      // Otherwise (showingSubMenu is false):
+          // 1) Set the CSS top property of subMenuEl to 0;
+
+      if (showingSubMenu === true){
+          buildSubMenu(objSubLinks);
+          subMenuEl.style.top = '100%';
+      } else {
+          subMenuEl.style.top = '0';
+      };
+
+      // 5.8
+      // Code the buildSubMenu function so that it:
+      //  1) Clears the contents of subMenuEl
+      //  2) Iterates over the subLinks array passed as an arugment; 
+      //      and for each 'link' object:
+      //        a) create an <a> element
+      //        b) on the new element, add an href attribute with its 
+      //          set to the href property of the link object
+      //        c) set the new element's content to the value of the text
+      //          property of the 'link' object.
+      //        d) append the new element to the subMenuEl element
+      //
+      function buildSubMenu(subLinksEl){
+        //1
+        subLinksEl.innerText = '';
+        //2
+        for (let i=0; i < subLinksEl.length; i++){
+          console.log(subLinksEl[i]);
+          console.log(subMenuEl);
+            //Create an <a> element.
+            let newButton = document.createElement('a');
+            //On the new element, add an href attribute with its value to the href property
+            //of the link object
+            newButton.setAttribute('href', subLinksEl[i].href);
+            //Set the new element's content to the value of the text property of the "link" object.
+            newButton.innerText = subLinksEl[i].text;
+            //Append the new element to the subMenuEl element
+            subMenuEl.append(newButton);
+        };
+      };
+
+
+
+
+
 
     
 });
@@ -150,9 +198,3 @@ topMenuEl.addEventListener('click', function(e){
 
 
 
-// 5.3
-// In the event listener, if the clicked <a> link has a class of active:
-// 1) Remove the active class from the clicked <a> element
-// 2) Set the showingSubMenu to false
-// 3) Set the CSS top property of subMenuEl to 0
-// 4) return to exit handler
