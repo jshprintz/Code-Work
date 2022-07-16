@@ -36,3 +36,7 @@ let animal = 'fish';
 animal == 'cow' ? console.log('mooooo') : console.log(`Hey! You're not a cow.`)
 
 // E
+let age = 15;
+age >= 16 ? console.log(`Here are the keys`) : console.log(`Sorry, you're too young.`);
+
+// II. Loops
