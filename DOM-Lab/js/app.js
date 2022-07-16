@@ -187,16 +187,27 @@ topMenuEl.addEventListener('click', function(e){
         };
       };
 
-
-
-
-
-
-    
 });
 
+// 6)
+// Attach a delegated 'click' event listener to subMenuEl.
+// The first line of code of the event listener function should call
+// the event object's preventDefault() method
+//
+// The second line of code function should immediately return if the 
+// element was not an <a> element.
+//
+// console.log() the content of the <a> to verify the handler is working.
 
+subMenuEl.addEventListener('click', function(e){
+  e.preventDefault();
+  console.log(e.target.innerText);
 
+  if (e.target.tagName.toLowerCase() !== 'a'){
+    console.log("It worked")
+    return
+  };
+});
 
 
 
