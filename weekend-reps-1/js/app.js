@@ -56,4 +56,17 @@ for (let i=0; i < 10; i++){
  // B.
  for (let i=0; i < 100; i++){
     (i % 2) === 0 ? console.log(i, "<-- is an evan number") : console.log(i);
- }
+ };
+
+ // C.
+ for (let i=1; i < 100; i++){
+    if ((i % 5) === 0 ){
+        console.log(`I found a ${i}. High five!`);
+    }
+    if ((i % 3) === 0 ){
+        console.log(`I found a ${i}. Three is a crowd.`);
+    }
+
+ };
+
+// D.
