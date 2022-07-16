@@ -32,3 +32,7 @@ console.log(a * a === d); // note: the answer is a simple arithmetic equation, n
 console.log(48 == '48');
 
 // D
+let animal = 'fish';
+animal == 'cow' ? console.log('mooooo') : console.log(`Hey! You're not a cow.`)
+
+// E
