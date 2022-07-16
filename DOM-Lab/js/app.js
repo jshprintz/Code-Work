@@ -109,10 +109,11 @@ topMenuEl.addEventListener('click', function(e){
               // 2) Set the showingSubMenu to false
               // 3) Set the CSS top property of subMenuEl to 0
               // 4) return to exit handler
-          for (const a of document.querySelectorAll('a.active')){
-            a.classList.remove('active');
+          if (e.target.classList.contains('active')){
+            e.target.classList.remove('active');
             showingSubMenu = false;
             subMenuEl.style.top = 0;
+            return
             }
         
         } 
@@ -135,7 +136,7 @@ topMenuEl.addEventListener('click', function(e){
       // Hint: Saving the link object in a variable will come in handy
       // for passing its subLinks array in the next task.
 
-      if (number === 0){
+      if (menuLinks[number] === 0){
         showingSubMenu = false;
       } else {
         showingSubMenu = true;
