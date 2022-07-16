@@ -70,3 +70,11 @@ for (let i=0; i < 10; i++){
  };
 
 // D.
+let bank_account = 0;
+for (let i=1; 1<10; i++){
+    bank_account += i;
+};
+console.log(bank_account);
+
+
+
