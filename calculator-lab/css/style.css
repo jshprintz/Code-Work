@@ -1,14 +1,21 @@
+body {
+    font-size: 1.5em;
+    background-image: radial-gradient(circle, #7cd16b, #25d199, #00cdc3, #00c5e2, #15baf0, #10bff4, #08c4f9, #00c9fd, #00dff0, #00efc9, #80fa93, #ddfb5f);
+}
+
 #output {
     border: solid 4px;
     text-align: right;
     padding-right: 20px;
     margin-bottom: 10px;
+    background-color: rgb(199, 210, 210);
 }
 #input {
     border: solid 4px;
     text-align: right;
     padding-right: 20px;
     margin-bottom: 10px;
+    background-color: azure;
 }
 
 #row1 {
@@ -21,88 +28,136 @@
     border: solid 2px;
     padding: 0px 20px;
     margin-bottom: 10px;
+    background-color:lightgoldenrodyellow;
 }
 #minus {
     border: solid 2px;
     padding: 0px 20px;
     margin-bottom: 10px;
+    background-color:lightgoldenrodyellow;
 }
 #multiply {
     border: solid 2px;
     padding: 0px 20px;
     margin-bottom: 10px;
+    background-color:lightgoldenrodyellow;
 }
 #divide {
     border: solid 2px;
     padding: 0px 20px;
+    background-color:lightgoldenrodyellow;
 }
 
 #one{
-    border: solid 2px;
+    border: solid 5px;
     display: inline-block;
     padding: 30px 60px;
     margin: 0px 5%;
+    background-image: radial-gradient(circle, #fbfcff, #f2f7fc, #e8f2f8, #ddeef2, #d3eaea, #c9ebe7, #c0ebe2, #baebda, #adf0d9, #9ff5d7, #90fad5, #7fffd3);
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 2em;
 }
 #two{
-    border: solid 2px;
+    border: solid 5px;
     display: inline-block;
     padding: 30px 60px;
     margin: 0px 10%;
+    background-image: radial-gradient(circle, #fbfcff, #f2f7fc, #e8f2f8, #ddeef2, #d3eaea, #c9ebe7, #c0ebe2, #baebda, #adf0d9, #9ff5d7, #90fad5, #7fffd3);
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 2em;
 }
 #three{
-    border: solid 2px;
+    border: solid 5px;
     display: inline-block;
     padding: 30px 60px;
     margin: 0px 5%;
+    background-image: radial-gradient(circle, #fbfcff, #f2f7fc, #e8f2f8, #ddeef2, #d3eaea, #c9ebe7, #c0ebe2, #baebda, #adf0d9, #9ff5d7, #90fad5, #7fffd3);
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 2em;
 }
 
 #four{
-    border: solid 2px;
+    border: solid 5px;
     display: inline-block;
     padding: 30px 60px;
     margin: 0px 5%;
+    background-image: radial-gradient(circle, #fbfcff, #f2f7fc, #e8f2f8, #ddeef2, #d3eaea, #c9ebe7, #c0ebe2, #baebda, #adf0d9, #9ff5d7, #90fad5, #7fffd3);
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 2em;
 }
 #five{
-    border: solid 2px;
+    border: solid 5px;
     display: inline-block;
     padding: 30px 60px;
     margin: 0px 10%;
+    background-image: radial-gradient(circle, #fbfcff, #f2f7fc, #e8f2f8, #ddeef2, #d3eaea, #c9ebe7, #c0ebe2, #baebda, #adf0d9, #9ff5d7, #90fad5, #7fffd3);
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 2em;
 }
 #six{
-    border: solid 2px;
+    border: solid 5px;
     display: inline-block;
     padding: 30px 60px;
     margin: 0px 5%;
+    background-image: radial-gradient(circle, #fbfcff, #f2f7fc, #e8f2f8, #ddeef2, #d3eaea, #c9ebe7, #c0ebe2, #baebda, #adf0d9, #9ff5d7, #90fad5, #7fffd3);
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 2em;
 }
 #seven{
-    border: solid 2px;
+    border: solid 5px;
     display: inline-block;
     padding: 30px 60px;
     margin: 0px 5%;
+    background-image: radial-gradient(circle, #fbfcff, #f2f7fc, #e8f2f8, #ddeef2, #d3eaea, #c9ebe7, #c0ebe2, #baebda, #adf0d9, #9ff5d7, #90fad5, #7fffd3);
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 2em;
 }
 #eight{
-    border: solid 2px;
+    border: solid 5px;
     display: inline-block;
     padding: 30px 60px;
     margin: 0px 10%;
+    background-image: radial-gradient(circle, #fbfcff, #f2f7fc, #e8f2f8, #ddeef2, #d3eaea, #c9ebe7, #c0ebe2, #baebda, #adf0d9, #9ff5d7, #90fad5, #7fffd3);
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 2em;
 }
 #nine{
-    border: solid 2px;
+    border: solid 5px;
     display: inline-block;
     padding: 30px 60px;
     margin: 0px 5%;
+    background-image: radial-gradient(circle, #fbfcff, #f2f7fc, #e8f2f8, #ddeef2, #d3eaea, #c9ebe7, #c0ebe2, #baebda, #adf0d9, #9ff5d7, #90fad5, #7fffd3);
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 2em;
 }
 
 #zero{
-    border: solid 2px;
+    border: solid 5px;
     display: inline-block;
     padding: 30px 120px;
     margin: 0px 10%;
+    background-image: radial-gradient(circle, #fbfcff, #f2f7fc, #e8f2f8, #ddeef2, #d3eaea, #c9ebe7, #c0ebe2, #baebda, #adf0d9, #9ff5d7, #90fad5, #7fffd3);
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 2em;
 }
 #equal{
-    border: solid 2px;
+    border: solid 5px;
     display: inline-block;
     padding: 30px 120px;
     margin: 0px 5%;
+    background-color:rgb(245, 181, 174);
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 2em;
 }
 
