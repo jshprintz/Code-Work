@@ -38,61 +38,61 @@ let sum = 0;
 // Listens for button One
 buttonOne.addEventListener('click', function(){
     newNumber = newNumber + '1';
-    dispInput(newNumber);
+    dispInput(oldNumber + newNumber);
 });
 
 // Listens for button Two
 buttonTwo.addEventListener('click', function(){
     newNumber = newNumber + '2';
-    dispInput(newNumber);
+    dispInput(oldNumber + newNumber);
 });
 
 // Listens for button Three
 buttonThree.addEventListener('click', function(){
     newNumber = newNumber + '3';
-    dispInput(newNumber);
+    dispInput(oldNumber + newNumber);
 });
 
 // Listens for button Four
 buttonFour.addEventListener('click', function(){
     newNumber = newNumber + '4';
-    dispInput(newNumber);
+    dispInput(oldNumber + newNumber);
 });
 
 // Listens for button Five
 buttonFive.addEventListener('click', function(){
     newNumber = newNumber + '5';
-    dispInput(newNumber);
+    dispInput(oldNumber + newNumber);
 });
 
 // Listens for button Six
 buttonSix.addEventListener('click', function(){
     newNumber = newNumber + '6';
-    dispInput(newNumber);
+    dispInput(oldNumber + newNumber);
 });
 
 // Listens for button Seven
 buttonSeven.addEventListener('click', function(){
     newNumber = newNumber + '7';
-    dispInput(newNumber);
+    dispInput(oldNumber + newNumber);
 });
 
 // Listens for button Eight
 buttonEight.addEventListener('click', function(){
     newNumber = newNumber + '8';
-    dispInput(newNumber);
+    dispInput(oldNumber + newNumber);
 });
 
 // Listens for button Nine
 buttonNine.addEventListener('click', function(){
     newNumber = newNumber + '9';
-    dispInput(newNumber);
+    dispInput(oldNumber + newNumber);
 });
 
 // Listens for button Zero
 buttonZero.addEventListener('click', function(){
     newNumber = newNumber + '0';
-    dispInput(newNumber);
+    dispInput(oldNumber + newNumber);
 });
 
 // Listens for the clear button
@@ -102,7 +102,7 @@ buttonClear.addEventListener('click', function(){
 
 // Listens for the Add button
 buttonAdd.addEventListener('click', function(){
-    oldNumber = `${newNumber} + `;
+    oldNumber += `${newNumber} + `;
     intNumber.push(Number(newNumber));
     console.log(intNumber, "Array")
     runAdd = true;
@@ -112,7 +112,7 @@ buttonAdd.addEventListener('click', function(){
 
 // Listens for the Subtract button
 buttonSubtract.addEventListener('click', function(){
-    oldNumber = `${newNumber} - `;
+    oldNumber += `${newNumber} - `;
     intNumber.push(Number(newNumber));
     runMinus = true;
     doMath();
@@ -121,7 +121,7 @@ buttonSubtract.addEventListener('click', function(){
 
 // Listens for the Multiply button
 buttonMultiply.addEventListener('click', function(){
-    oldNumber = `${newNumber} * `;
+    oldNumber += `${newNumber} * `;
     intNumber.push(Number(newNumber));
     runMulti = true;
     doMath();
@@ -130,7 +130,7 @@ buttonMultiply.addEventListener('click', function(){
 
 // Listens for the Divide button
 buttonDivide.addEventListener('click', function(){
-    oldNumber = `${newNumber} / `;
+    oldNumber += `${newNumber} / `;
     intNumber.push(Number(newNumber));
     runDivide = true;
     doMath();
@@ -142,6 +142,8 @@ buttonEqual.addEventListener('click', function(){
     // Pushes last number entered into array
     intNumber.push(Number(newNumber));
     doMath();
+    oldNumber = '';
+    dispInput(oldNumber);
 });
 
 // Runs the math equations
@@ -151,7 +153,6 @@ function doMath(){
             sum = 0
         for (let i=0; i<intNumber.length; i++){
             sum += intNumber[i];
-            console.log(intNumber[i])
         }
         intNumber = clearNumbers(intNumber);
         runAdd = false;
@@ -172,10 +173,12 @@ function doMath(){
         intNumber = clearNumbers(intNumber);
         runMulti = false;
     }   else if (runDivide === true) {
-        // Divide's the numbers
+        // Divides the numbers
         sum = intNumber[0];
+        console.log(sum, "Before divide");
         for (let i=1; i<intNumber.length; i++){
             sum /= intNumber[i];
+            console.log(sum, "during divide");
         }
         intNumber = clearNumbers(intNumber);
         runDivide = false;
@@ -183,7 +186,7 @@ function doMath(){
 
     // Resets for next equation
     newNumber = '';
-    dispInput(newNumber);
+    dispInput(oldNumber);
     dispOutput(sum);
     intNumber.push(sum);
 };
@@ -216,3 +219,5 @@ function dispInput(dispNumber){
     displayInput.innerText = dispNumber;
 };
 
+// Long equations still don't work right, especially around
+// division. Everything else is looking okay.
