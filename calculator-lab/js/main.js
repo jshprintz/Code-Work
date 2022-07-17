@@ -16,94 +16,118 @@ const buttonSubtract = document.getElementById('minus');
 const buttonMultiply = document.getElementById('multiply');
 const buttonDivide = document.getElementById('divide');
 const buttonClear = document.getElementById('clear');
-const displayInput = document.getElementById('input');
-const displayOutput = document.getElementById('output')
+const displayInput = document.getElementById('dispInput');
+const displayOutput = document.getElementById('dispOutput');
+const buttonEqual = document.getElementById('equal');
 
 let newNumber = '';
+let oldNumber = '';
+let intNumber = [];
+let runAdd = false, runMinus = false, runMulti = false, runDivide = false;
+let sum = 0;
 
 
 // All of the event handlers
 buttonOne.addEventListener('click', function(){
     newNumber = newNumber + '1';
-    dispInput('20px');
+    dispInput(newNumber);
+    dispOutput('');
 });
 buttonTwo.addEventListener('click', function(){
     newNumber = newNumber + '2';
-    dispInput('20px');
+    dispInput(newNumber);
+    dispOutput('');
 });
 buttonThree.addEventListener('click', function(){
     newNumber = newNumber + '3';
-    dispInput('20px');
+    dispInput(newNumber);
+    dispOutput('');
 });
 buttonFour.addEventListener('click', function(){
     newNumber = newNumber + '4';
-    dispInput('20px');
+    dispInput(newNumber);
+    dispOutput('');
 });
 buttonFive.addEventListener('click', function(){
     newNumber = newNumber + '5';
-    dispInput('20px');
+    dispInput(newNumber);
+    dispOutput('');
 });
 buttonSix.addEventListener('click', function(){
     newNumber = newNumber + '6';
-    dispInput('20px');
+    dispInput(newNumber);
+    dispOutput('');
 });
 buttonSeven.addEventListener('click', function(){
     newNumber = newNumber + '7';
-    dispInput('20px');
+    dispInput(newNumber);
+    dispOutput('');
 });
 buttonEight.addEventListener('click', function(){
     newNumber = newNumber + '8';
-    dispInput('20px');
+    dispInput(newNumber);
+    dispOutput('');
 });
 buttonNine.addEventListener('click', function(){
     newNumber = newNumber + '9';
-    dispInput('20px');
+    dispInput(newNumber);
+    dispOutput('');
 });
 buttonZero.addEventListener('click', function(){
     newNumber = newNumber + '0';
-    dispInput('20px');
+    dispInput(newNumber);
+    dispOutput('');
 });
 
 buttonClear.addEventListener('click', function(){
     newNumber = '';
-    dispInput('34px');
+    oldNumber = '';
+    dispInput(newNumber);
+    dispOutput(oldNumber);
 });
 
+buttonAdd.addEventListener('click', function(){
+    oldNumber = `${newNumber} + `;
+    intNumber.push(Number(newNumber));
+    runAdd = true;
+    newNumber = '';
+    dispInput(oldNumber);
+    console.log(intNumber, "int number")
+});
+buttonEqual.addEventListener('click', function(){
+    intNumber.push(Number(newNumber));
+    if (runAdd = true){
+        // Adds the numbers
+        for (let i=0; i<intNumber.length; i++){
+            sum += intNumber[i];
+            console.log(sum, "sum")
+        }
+        intNumber = clearNumbers(intNumber);
+        console.log(intNumber, "array")
+        runAdd = false;
+    }
+    newNumber = '';
+    dispInput(newNumber);
+    dispOutput(sum);
+    sum = 0;
+});
+
+// Clear numbers function after equal
+function clearNumbers(array){
+    while(array.length>0){
+        array.pop();
+    }
+    return array;
+}
 
 
+// Display Output function
+function dispOutput(dispNumber){
+    displayOutput.innerText = dispNumber;
+};
 
 // Display Input function
-function dispInput(padPX){
-    displayInput.style.padding = padPX;
-    displayInput.innerText = newNumber
+function dispInput(dispNumber){
+    displayInput.innerText = dispNumber;
 };
 
-// Add function
-function addition(firstNum){
-    let sum = firstNum
-    return sum;
-};
-
-// Subtract function
-function subtraction(firstNum){
-    let sum = firstNum
-    return sum;
-};
-
-// Multiplication function
-function multiply(firstNum){
-    let sum = firstNum
-    return sum;
-};
-
-// Divide function
-function divide(firstNum){
-    let sum = firstNum
-    return sum;
-};
-
-// Equals function
-function equals(firstNum){
-    let sum = firstNum
-    return sum;
-};
