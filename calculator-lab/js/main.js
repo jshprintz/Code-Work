@@ -39,89 +39,75 @@ let sum = 0;
 buttonOne.addEventListener('click', function(){
     newNumber = newNumber + '1';
     dispInput(newNumber);
-    dispOutput('');
 });
 
 // Listens for button Two
 buttonTwo.addEventListener('click', function(){
     newNumber = newNumber + '2';
     dispInput(newNumber);
-    dispOutput('');
 });
 
 // Listens for button Three
 buttonThree.addEventListener('click', function(){
     newNumber = newNumber + '3';
     dispInput(newNumber);
-    dispOutput('');
 });
 
 // Listens for button Four
 buttonFour.addEventListener('click', function(){
     newNumber = newNumber + '4';
     dispInput(newNumber);
-    dispOutput('');
 });
 
 // Listens for button Five
 buttonFive.addEventListener('click', function(){
     newNumber = newNumber + '5';
     dispInput(newNumber);
-    dispOutput('');
 });
 
 // Listens for button Six
 buttonSix.addEventListener('click', function(){
     newNumber = newNumber + '6';
     dispInput(newNumber);
-    dispOutput('');
 });
 
 // Listens for button Seven
 buttonSeven.addEventListener('click', function(){
     newNumber = newNumber + '7';
     dispInput(newNumber);
-    dispOutput('');
 });
 
 // Listens for button Eight
 buttonEight.addEventListener('click', function(){
     newNumber = newNumber + '8';
     dispInput(newNumber);
-    dispOutput('');
 });
 
 // Listens for button Nine
 buttonNine.addEventListener('click', function(){
     newNumber = newNumber + '9';
     dispInput(newNumber);
-    dispOutput('');
 });
 
 // Listens for button Zero
 buttonZero.addEventListener('click', function(){
     newNumber = newNumber + '0';
     dispInput(newNumber);
-    dispOutput('');
 });
 
 // Listens for the clear button
 buttonClear.addEventListener('click', function(){
-    newNumber = '';
-    oldNumber = '';
-    dispInput(newNumber);
-    dispOutput(oldNumber);
-    sum = 0;
-    intNumber = clearNumbers(intNumber);
+    clearAll();
 });
 
 // Listens for the Add button
 buttonAdd.addEventListener('click', function(){
     oldNumber = `${newNumber} + `;
     intNumber.push(Number(newNumber));
+    console.log(intNumber, "Array")
     runAdd = true;
-    newNumber = '';
-    dispInput(oldNumber);
+    doMath();
+    runAdd = true;
 });
 
 // Listens for the Subtract button
@@ -129,8 +115,8 @@ buttonSubtract.addEventListener('click', function(){
     oldNumber = `${newNumber} - `;
     intNumber.push(Number(newNumber));
     runMinus = true;
-    newNumber = '';
-    dispInput(oldNumber);
+    doMath();
+    runMinus = true;
 });
 
 // Listens for the Multiply button
@@ -138,8 +124,8 @@ buttonMultiply.addEventListener('click', function(){
     oldNumber = `${newNumber} * `;
     intNumber.push(Number(newNumber));
     runMulti = true;
-    newNumber = '';
-    dispInput(oldNumber);
+    doMath();
+    runMulti = true;
 });
 
 // Listens for the Divide button
@@ -147,20 +133,25 @@ buttonDivide.addEventListener('click', function(){
     oldNumber = `${newNumber} / `;
     intNumber.push(Number(newNumber));
     runDivide = true;
-    newNumber = '';
-    dispInput(oldNumber);
+    doMath();
+    runDivide = true;
 });
 
 // Listens for the Equal button
 buttonEqual.addEventListener('click', function(){
     // Pushes last number entered into array
     intNumber.push(Number(newNumber));
-    // if Add was selected
+    doMath();
+});
+
+// Runs the math equations
+function doMath(){
     if (runAdd === true){
         // Adds the numbers
             sum = 0
         for (let i=0; i<intNumber.length; i++){
             sum += intNumber[i];
+            console.log(intNumber[i])
         }
         intNumber = clearNumbers(intNumber);
         runAdd = false;
@@ -194,8 +185,8 @@ buttonEqual.addEventListener('click', function(){
     newNumber = '';
     dispInput(newNumber);
     dispOutput(sum);
-    sum = 0;
-});
+    intNumber.push(sum);
+};
 
 // Clear numbers function after equal
 function clearNumbers(array){
@@ -204,6 +195,16 @@ function clearNumbers(array){
     }
     return array;
 }
+
+// Clears everything
+function clearAll(){
+    newNumber = '';
+    oldNumber = '';
+    dispInput(newNumber);
+    dispOutput(oldNumber);
+    sum = 0;
+    intNumber = clearNumbers(intNumber);
+};
 
 // Display Output function
 function dispOutput(dispNumber){
