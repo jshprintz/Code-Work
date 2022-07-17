@@ -3,6 +3,7 @@ body {
     background-image: radial-gradient(circle, #7cd16b, #25d199, #00cdc3, #00c5e2, #15baf0, #10bff4, #08c4f9, #00c9fd, #00dff0, #00efc9, #80fa93, #ddfb5f);
 }
 
+
 #output {
     border: solid 4px;
     text-align: right;
@@ -25,25 +26,31 @@ body {
 }
 
 #plus {
-    border: solid 2px;
+    border: solid 5px;
     padding: 0px 20px;
     margin-bottom: 10px;
     background-color:lightgoldenrodyellow;
 }
 #minus {
-    border: solid 2px;
+    border: solid 5px;
     padding: 0px 20px;
     margin-bottom: 10px;
     background-color:lightgoldenrodyellow;
 }
 #multiply {
-    border: solid 2px;
+    border: solid 5px;
     padding: 0px 20px;
     margin-bottom: 10px;
     background-color:lightgoldenrodyellow;
 }
 #divide {
-    border: solid 2px;
+    border: solid 5px;
+    padding: 0px 20px;
+    background-color:lightgoldenrodyellow;
+    margin-bottom: 10px;
+}
+#clear {
+    border: solid 5px;
     padding: 0px 20px;
     background-color:lightgoldenrodyellow;
 }
