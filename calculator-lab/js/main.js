@@ -26,7 +26,7 @@ const buttonEqual = document.getElementById('equal');
 //-----------------------------------------------------
 
 let newNumber = '';
-let oldNumber = '';
+let dispNumber = '';
 let intNumber = [];
 let runAdd = false, runMinus = false, runMulti = false, runDivide = false;
 let sum = 0;
@@ -38,61 +38,61 @@ let sum = 0;
 // Listens for button One
 buttonOne.addEventListener('click', function(){
     newNumber = newNumber + '1';
-    dispInput(oldNumber + newNumber);
+    dispInput(dispNumber + newNumber);
 });
 
 // Listens for button Two
 buttonTwo.addEventListener('click', function(){
     newNumber = newNumber + '2';
-    dispInput(oldNumber + newNumber);
+    dispInput(dispNumber + newNumber);
 });
 
 // Listens for button Three
 buttonThree.addEventListener('click', function(){
     newNumber = newNumber + '3';
-    dispInput(oldNumber + newNumber);
+    dispInput(dispNumber + newNumber);
 });
 
 // Listens for button Four
 buttonFour.addEventListener('click', function(){
     newNumber = newNumber + '4';
-    dispInput(oldNumber + newNumber);
+    dispInput(dispNumber + newNumber);
 });
 
 // Listens for button Five
 buttonFive.addEventListener('click', function(){
     newNumber = newNumber + '5';
-    dispInput(oldNumber + newNumber);
+    dispInput(dispNumber + newNumber);
 });
 
 // Listens for button Six
 buttonSix.addEventListener('click', function(){
     newNumber = newNumber + '6';
-    dispInput(oldNumber + newNumber);
+    dispInput(dispNumber + newNumber);
 });
 
 // Listens for button Seven
 buttonSeven.addEventListener('click', function(){
     newNumber = newNumber + '7';
-    dispInput(oldNumber + newNumber);
+    dispInput(dispNumber + newNumber);
 });
 
 // Listens for button Eight
 buttonEight.addEventListener('click', function(){
     newNumber = newNumber + '8';
-    dispInput(oldNumber + newNumber);
+    dispInput(dispNumber + newNumber);
 });
 
 // Listens for button Nine
 buttonNine.addEventListener('click', function(){
     newNumber = newNumber + '9';
-    dispInput(oldNumber + newNumber);
+    dispInput(dispNumber + newNumber);
 });
 
 // Listens for button Zero
 buttonZero.addEventListener('click', function(){
     newNumber = newNumber + '0';
-    dispInput(oldNumber + newNumber);
+    dispInput(dispNumber + newNumber);
 });
 
 // Listens for the clear button
@@ -102,9 +102,8 @@ buttonClear.addEventListener('click', function(){
 
 // Listens for the Add button
 buttonAdd.addEventListener('click', function(){
-    oldNumber += `${newNumber} + `;
+    dispNumber += `${newNumber} + `;
     intNumber.push(Number(newNumber));
-    console.log(intNumber, "Array")
     runAdd = true;
     doMath();
     runAdd = true;
@@ -112,7 +111,7 @@ buttonAdd.addEventListener('click', function(){
 
 // Listens for the Subtract button
 buttonSubtract.addEventListener('click', function(){
-    oldNumber += `${newNumber} - `;
+    dispNumber += `${newNumber} - `;
     intNumber.push(Number(newNumber));
     runMinus = true;
     doMath();
@@ -121,7 +120,8 @@ buttonSubtract.addEventListener('click', function(){
 
 // Listens for the Multiply button
 buttonMultiply.addEventListener('click', function(){
-    oldNumber += `${newNumber} * `;
+    dispNumber += `${newNumber} * `;
+    newNumber === '' ? newNumber = 1 : newNumber;
     intNumber.push(Number(newNumber));
     runMulti = true;
     doMath();
@@ -130,7 +130,8 @@ buttonMultiply.addEventListener('click', function(){
 
 // Listens for the Divide button
 buttonDivide.addEventListener('click', function(){
-    oldNumber += `${newNumber} / `;
+    dispNumber += `${newNumber} / `;
+    newNumber === '' ? newNumber = 1 : newNumber;
     intNumber.push(Number(newNumber));
     runDivide = true;
     doMath();
@@ -142,8 +143,8 @@ buttonEqual.addEventListener('click', function(){
     // Pushes last number entered into array
     intNumber.push(Number(newNumber));
     doMath();
-    oldNumber = '';
-    dispInput(oldNumber);
+    dispNumber = '';
+    dispInput(dispNumber);
 });
 
 // Runs the math equations
@@ -175,10 +176,10 @@ function doMath(){
     }   else if (runDivide === true) {
         // Divides the numbers
         sum = intNumber[0];
-        console.log(sum, "Before divide");
+            //console.log(sum, "Before divide");
         for (let i=1; i<intNumber.length; i++){
             sum /= intNumber[i];
-            console.log(sum, "during divide");
+           // console.log(sum, "during divide");
         }
         intNumber = clearNumbers(intNumber);
         runDivide = false;
@@ -186,9 +187,10 @@ function doMath(){
 
     // Resets for next equation
     newNumber = '';
-    dispInput(oldNumber);
+    dispInput(dispNumber);
     dispOutput(sum);
     intNumber.push(sum);
+  //  console.log(intNumber, "after math")
 };
 
 // Clear numbers function after equal
@@ -202,9 +204,9 @@ function clearNumbers(array){
 // Clears everything
 function clearAll(){
     newNumber = '';
-    oldNumber = '';
+    dispNumber = '';
     dispInput(newNumber);
-    dispOutput(oldNumber);
+    dispOutput(dispNumber);
     sum = 0;
     intNumber = clearNumbers(intNumber);
 };
