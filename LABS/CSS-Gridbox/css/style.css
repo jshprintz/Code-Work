@@ -23,6 +23,7 @@ background-color: #ffffff;
 
 #card > p {
 text-align: right;
+margin-right: 10px;
 font-weight: thin;
 font-size: 6pt;
 border: 2px black;
