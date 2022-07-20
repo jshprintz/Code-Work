@@ -98,7 +98,7 @@ h4 {
 
 #lGreen {
     grid-column-start: 45;
-    grid-row-start: 111;
+    grid-row-start: 108;
     height: 40px;
     width: 96px;
     background-color: rgb(74, 202, 129)
@@ -106,7 +106,7 @@ h4 {
 
 #rGreen {
     grid-column-start: 55;
-    grid-row-start: 111;
+    grid-row-start: 108;
     height: 40px;
     width: 96px;
     background-color: rgb(64, 181, 116)
@@ -114,7 +114,7 @@ h4 {
 
 #phone {
     grid-column-start: 48;
-    grid-row-start: 112;
+    grid-row-start: 109;
 
     height: 30px;
     background-color: rgb(74, 202, 129);
@@ -129,7 +129,7 @@ h4 {
 
 #text {
     grid-column-start: 58;
-    grid-row-start: 112;
+    grid-row-start: 109;
 
     height: 30px;
 }
