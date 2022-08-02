@@ -15,9 +15,21 @@ function show(req, res){
     });
 };
 
+function newTodo(req, res){
+    res.render('skills/new.ejs')
+}
+
+function create(req, res){
+    Skill.create(req.body)
+    //everytime we change data, we redirect
+    res.redirect('/skills'); // <- telling client to make a get request
+    // to /skills now
+}
 
 module.exports = {
     //index: index,
     index, // ^short form of the above
-    show
+    show,
+    new: newTodo,
+    create,
 }
