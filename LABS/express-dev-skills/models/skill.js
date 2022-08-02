@@ -9,13 +9,13 @@ const skills = [
 
 module.exports = {
 	getAll,
-	// getOne
+	getOne
 };
 
-//   function getOne(id) {
-// 	// Use the Array.prototype.find iterator method
-// 	return todos.find(todo => todo.id === parseInt(id));
-//   }
+  function getOne(id) {
+	// Use the Array.prototype.find iterator method
+	return skills.find(skill => skill.id === parseInt(id));
+  }
 
 function getAll() {
 	return skills;

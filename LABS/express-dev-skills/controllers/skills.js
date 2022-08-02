@@ -8,16 +8,16 @@ function index(req, res, next) {
     });
 };
 
-// function show(req, res){
-//     console.log(req.params, " <- req.params")
-//     res.render('skills/show.ejs', {
-//         skill: Skill.getOne(req.params.id)
-//     });
-// };
+function show(req, res){
+    console.log(req.params, " <- req.params")
+    res.render('skills/show.ejs', {
+        skill: Skill.getOne(req.params.id)
+    });
+};
 
 
 module.exports = {
     //index: index,
     index, // ^short form of the above
-    // show
+    show
 }
