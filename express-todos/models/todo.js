@@ -6,13 +6,23 @@ const todos = [
 
 module.exports = {
 	getAll,
-	getOne
+	getOne,
+	create,
+};
+
+function create(todo) {
+	// Add the id
+	todo.id = Date.now() % 1000000;
+	// New todos wouldn't be done :)
+	todo.done = false;
+	todos.push(todo);
 };
 
 function getOne(id) {
 	// Use the Array.prototype.find iterator method
 	return todos.find(todo => todo.id === parseInt(id));
-}
+};
+
 function getAll() {
 	return todos;
-}
+};
