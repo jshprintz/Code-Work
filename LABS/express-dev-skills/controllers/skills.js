@@ -31,6 +31,11 @@ function deleteSkill(req, res) {
     res.redirect('/skills');
 }
 
+function update(req, res) {
+    console.log(req.params.id);
+    res.redirect('/skills');
+}
+
 
 module.exports = {
     //index: index,
@@ -39,4 +44,5 @@ module.exports = {
     new: newTodo,
     create,
     delete: deleteSkill,
+    update,
 }

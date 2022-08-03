@@ -6,7 +6,6 @@ const logger = require('morgan');
 const methodOverride = require('method-override');
 
 const indexRouter = require('./routes/index');
-//const usersRouter = require('./routes/users');
 //IMPORTING SKILLS ROUTER
 const skillsRouter = require('./routes/skills');
 
@@ -26,7 +25,6 @@ app.use(methodOverride('_method'));
 app.use('/', indexRouter);
 //MOUNTING the SKILLS ROUTER
 app.use('/skills', skillsRouter);
-//app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

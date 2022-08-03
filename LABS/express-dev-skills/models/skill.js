@@ -12,6 +12,7 @@ module.exports = {
 	getOne,
     create,
     deleteOne,
+	update,
 };
 
 function getOne(id) {
@@ -36,3 +37,8 @@ function deleteOne(id) {
     const idx = skills.findIndex(skill => skill.id === parseInt(id));
     skills.splice(idx, 1);
 };
+
+function update(id) {
+	const idx = skills.findIndex(skill => skill.id === parseInt(id));
+	console.log(idx, " <- IDX");
+}

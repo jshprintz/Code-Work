@@ -12,5 +12,7 @@ router.get('/:id', skillController.show);
 router.post('/', skillController.create);
 // Delete skill
 router.delete('/:id', skillController.delete);
+// Update skill
+router.put('/:id', skillController.update);
 
 module.exports = router;

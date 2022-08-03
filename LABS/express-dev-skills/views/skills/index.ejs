@@ -17,6 +17,10 @@
                     class="delete-form" method="POST">
                     <button type="submit">X</button>
                 </form>
+                <form action="/skills/update/<%= s.id %>"
+                    class="update-form" method="POST">
+                    <button type="submit">Update</button>
+                </form>
                 <a href="/skills/<%= s.id %>"><%= s.skill %></a>
                 -
                 <%= s.done ? 'done' : 'not done' %> 

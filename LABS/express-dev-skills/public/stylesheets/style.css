@@ -20,3 +20,13 @@ a {
 li {
   list-style: none;
 }
+
+/* Update buttons */
+.update-form {
+  display: inline-block;
+  margin-right: 10px;
+}
+	
+.update-form button {
+  color: rgb(0, 183, 255);
+}
