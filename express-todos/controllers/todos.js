@@ -19,6 +19,13 @@ function newTodo(req, res){
     res.render('todos/new.ejs')
 }
 
+function deleteTodo(req, res){
+    // Delete from DB
+    Todo.deleteOne(req.params.id);
+    // redirect
+    res.redirect('/todos');
+}
+
 function create(req, res){
     Todo.create(req.body)
     //everytime we change data, we redirect
@@ -32,4 +39,5 @@ module.exports = {
     show,
     new: newTodo,
     create,
+    delete: deleteTodo,
 }

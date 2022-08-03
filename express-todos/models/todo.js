@@ -8,6 +8,7 @@ module.exports = {
 	getAll,
 	getOne,
 	create,
+	deleteOne,
 };
 
 function create(todo) {
@@ -16,6 +17,11 @@ function create(todo) {
 	// New todos wouldn't be done :)
 	todo.done = false;
 	todos.push(todo);
+};
+
+function deleteOne(id){
+	const idx = todos.findIndex(todo => todo.id === parseInt(id));
+	todos.splice(idx, 1);
 };
 
 function getOne(id) {

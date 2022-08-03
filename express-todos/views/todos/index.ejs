@@ -4,19 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>Todos</title>
 </head>
 <body>
     <h1>Todos</h1>
     <a href="/todos/new">Add Todo</a>
     <ul>
-        <% todos.forEach(t => { %>
+        <% todos.forEach(function(t) { %>
             <li>
+                <form action="/todos/<%= t.id %>?_method=DELETE"
+                class="delete-form" method="POST">
+                <button type="submit">X</button>
+                </form>
                 <a href="/todos/<%= t.id %>"><%= t.todo %></a>
                 -
                 <%= t.done ? 'done' : 'not done' %> 
             </li>
         <% }); %>
     </ul>
+    <h2><a href="../">Home</a></h2>
 </body>
 </html>

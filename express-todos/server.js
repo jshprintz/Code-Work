@@ -8,6 +8,7 @@ const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 // IMPORTING the todos router
 const todosRouter = require('./routes/todos');
+const methodOverride = require('method-override');
 
 const app = express();
 
@@ -21,7 +22,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(methodOverride('_method'));
 
+// Mounting aka End points aka controller functions aka responding to the client
 app.use('/', indexRouter);
 // MOUNTING the todos router
 app.use('/todos', todosRouter);
