@@ -10,5 +10,7 @@ router.get('/new', skillController.new);
 router.get('/:id', skillController.show);
 // create skill
 router.post('/', skillController.create);
+// Delete skill
+router.delete('/:id', skillController.delete);
 
 module.exports = router;

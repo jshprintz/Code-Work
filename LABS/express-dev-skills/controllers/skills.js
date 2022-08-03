@@ -26,10 +26,17 @@ function create(req, res){
     // to /skills now
 }
 
+function deleteSkill(req, res) {
+    Skill.deleteOne(req.params.id);
+    res.redirect('/skills');
+}
+
+
 module.exports = {
     //index: index,
     index, // ^short form of the above
     show,
     new: newTodo,
     create,
+    delete: deleteSkill,
 }
